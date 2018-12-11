@@ -4,8 +4,8 @@ import sys
 
 def main():
     # CLI Argument Reading
-    global grandDick
-    grandDick = {}
+    global grandDic
+    grandDic = {}
     to_read = ""
     try:
         if sys.argv[1]:
@@ -14,7 +14,7 @@ def main():
         print("You gave no file to read.")
 
     config_arg(set_parse_var(to_read))
-    print_dick()
+    print_dic()
     return
 
 
@@ -45,10 +45,10 @@ def config_arg(read_me):
                         temp_name += line[j]
                         j += 1
 
-                    if temp_name in grandDick:
-                        grandDick[temp_name] += 1
+                    if temp_name in grandDic:
+                        grandDic[temp_name] += 1
                     else:
-                        grandDick[temp_name] = 1
+                        grandDic[temp_name] = 1
                     break
                 elif char == to_match[i]:
                     i += 1
@@ -58,9 +58,9 @@ def config_arg(read_me):
     return
 
 
-def print_dick():
-    for item in grandDick:
-        print("{} invited {} people(s).".format(item, grandDick[item]))
+def print_dic():
+    for item in grandDic:
+        print("{} invited {} people(s).".format(item, grandDic[item]))
     return
 
 
